@@ -1,0 +1,417 @@
+{
+  "F-001": {
+    "id": "F-001",
+    "name": "Browser automation driver",
+    "milestone": "M1",
+    "priority": "P0",
+    "status": "PLANNED",
+    "depends": [
+      "F-022"
+    ],
+    "spec": "docs/features/F-001-browser-automation-driver.md",
+    "source": [
+      "src/game_explorer/drivers/playwright.py"
+    ],
+    "tests": [
+      "tests/test_browser.py"
+    ],
+    "owner": "unassigned"
+  },
+  "F-002": {
+    "id": "F-002",
+    "name": "Observation engine",
+    "milestone": "M1",
+    "priority": "P0",
+    "status": "PLANNED",
+    "depends": [
+      "F-001"
+    ],
+    "spec": "docs/features/F-002-observation-engine.md",
+    "source": [
+      "src/game_explorer/observation/snapshot.py"
+    ],
+    "tests": [
+      "tests/test_browser.py"
+    ],
+    "owner": "unassigned"
+  },
+  "F-003": {
+    "id": "F-003",
+    "name": "State fingerprinting",
+    "milestone": "M1",
+    "priority": "P0",
+    "status": "PLANNED",
+    "depends": [
+      "F-002"
+    ],
+    "spec": "docs/features/F-003-state-fingerprinting.md",
+    "source": [
+      "src/game_explorer/state/recognize.py"
+    ],
+    "tests": [
+      "tests/test_domain.py"
+    ],
+    "owner": "unassigned"
+  },
+  "F-004": {
+    "id": "F-004",
+    "name": "Action discovery",
+    "milestone": "M1",
+    "priority": "P0",
+    "status": "PLANNED",
+    "depends": [
+      "F-002"
+    ],
+    "spec": "docs/features/F-004-action-discovery.md",
+    "source": [
+      "src/game_explorer/actions/discover.py"
+    ],
+    "tests": [
+      "tests/test_domain.py"
+    ],
+    "owner": "unassigned"
+  },
+  "F-005": {
+    "id": "F-005",
+    "name": "Safety policy engine",
+    "milestone": "M1",
+    "priority": "P0",
+    "status": "PLANNED",
+    "depends": [
+      "F-004"
+    ],
+    "spec": "docs/features/F-005-safety-policy-engine.md",
+    "source": [
+      "src/game_explorer/policies/scope.py"
+    ],
+    "tests": [
+      "tests/test_domain.py"
+    ],
+    "owner": "unassigned"
+  },
+  "F-006": {
+    "id": "F-006",
+    "name": "Navigation graph",
+    "milestone": "M1",
+    "priority": "P0",
+    "status": "PLANNED",
+    "depends": [
+      "F-003",
+      "F-008"
+    ],
+    "spec": "docs/features/F-006-navigation-graph.md",
+    "source": [
+      "src/game_explorer/storage/store.py"
+    ],
+    "tests": [
+      "tests/test_store.py"
+    ],
+    "owner": "unassigned"
+  },
+  "F-007": {
+    "id": "F-007",
+    "name": "Exploration planner",
+    "milestone": "M1",
+    "priority": "P0",
+    "status": "PLANNED",
+    "depends": [
+      "F-005",
+      "F-006",
+      "F-009"
+    ],
+    "spec": "docs/features/F-007-exploration-planner.md",
+    "source": [
+      "src/game_explorer/exploration/engine.py"
+    ],
+    "tests": [
+      "tests/test_browser.py"
+    ],
+    "owner": "unassigned"
+  },
+  "F-008": {
+    "id": "F-008",
+    "name": "Persistent storage",
+    "milestone": "M1",
+    "priority": "P0",
+    "status": "PLANNED",
+    "depends": [
+      "F-003"
+    ],
+    "spec": "docs/features/F-008-persistent-storage.md",
+    "source": [
+      "src/game_explorer/storage/store.py"
+    ],
+    "tests": [
+      "tests/test_store.py"
+    ],
+    "owner": "unassigned"
+  },
+  "F-009": {
+    "id": "F-009",
+    "name": "Evidence management",
+    "milestone": "M1",
+    "priority": "P0",
+    "status": "PLANNED",
+    "depends": [
+      "F-002"
+    ],
+    "spec": "docs/features/F-009-evidence-management.md",
+    "source": [
+      "src/game_explorer/evidence/files.py"
+    ],
+    "tests": [
+      "tests/test_store.py"
+    ],
+    "owner": "unassigned"
+  },
+  "F-010": {
+    "id": "F-010",
+    "name": "OmniRouter integration",
+    "milestone": "M2",
+    "status": "PLANNED",
+    "priority": "P2",
+    "depends": [
+      "F-005",
+      "F-007"
+    ],
+    "spec": "docs/features/F-010-omnirouter-integration.md",
+    "source": [
+      "src/game_explorer/llm/"
+    ],
+    "tests": [
+      "tests/test_llm.py"
+    ],
+    "owner": "unassigned"
+  },
+  "F-011": {
+    "id": "F-011",
+    "name": "Resumable exploration",
+    "milestone": "M3",
+    "status": "PLANNED",
+    "priority": "P2",
+    "depends": [
+      "F-007",
+      "F-008"
+    ],
+    "spec": "docs/features/F-011-resumable-exploration.md",
+    "source": [
+      "src/game_explorer/exploration/checkpoints.py"
+    ],
+    "tests": [
+      "tests/test_recovery.py"
+    ],
+    "owner": "unassigned"
+  },
+  "F-012": {
+    "id": "F-012",
+    "name": "Human intervention",
+    "milestone": "M3",
+    "status": "PLANNED",
+    "priority": "P2",
+    "depends": [
+      "F-001",
+      "F-011"
+    ],
+    "spec": "docs/features/F-012-human-intervention.md",
+    "source": [
+      "src/game_explorer/recording/intervention.py"
+    ],
+    "tests": [
+      "tests/test_intervention.py"
+    ],
+    "owner": "unassigned"
+  },
+  "F-013": {
+    "id": "F-013",
+    "name": "Business rule extraction",
+    "milestone": "M4",
+    "status": "PLANNED",
+    "priority": "P2",
+    "depends": [
+      "F-002",
+      "F-009",
+      "F-010"
+    ],
+    "spec": "docs/features/F-013-business-rule-extraction.md",
+    "source": [
+      "src/game_explorer/analysis/rules.py"
+    ],
+    "tests": [
+      "tests/test_analysis.py"
+    ],
+    "owner": "unassigned"
+  },
+  "F-014": {
+    "id": "F-014",
+    "name": "Documentation generator",
+    "milestone": "M1",
+    "priority": "P0",
+    "status": "PLANNED",
+    "depends": [
+      "F-006",
+      "F-009"
+    ],
+    "spec": "docs/features/F-014-documentation-generator.md",
+    "source": [
+      "src/game_explorer/reporting/offline.py"
+    ],
+    "tests": [
+      "tests/test_browser.py"
+    ],
+    "owner": "unassigned"
+  },
+  "F-015": {
+    "id": "F-015",
+    "name": "Competitor comparison",
+    "milestone": "M6",
+    "status": "PLANNED",
+    "priority": "P2",
+    "depends": [
+      "F-013",
+      "F-014"
+    ],
+    "spec": "docs/features/F-015-competitor-comparison.md",
+    "source": [
+      "src/game_explorer/comparison/"
+    ],
+    "tests": [
+      "tests/test_comparison.py"
+    ],
+    "owner": "unassigned"
+  },
+  "F-016": {
+    "id": "F-016",
+    "name": "Regression detection",
+    "milestone": "M9",
+    "status": "DEFERRED",
+    "priority": "P2",
+    "depends": [
+      "F-006",
+      "F-011",
+      "F-014"
+    ],
+    "spec": "docs/features/F-016-regression-detection.md",
+    "source": [
+      "src/game_explorer/analysis/regression.py"
+    ],
+    "tests": [
+      "tests/test_regression.py"
+    ],
+    "owner": "unassigned"
+  },
+  "F-017": {
+    "id": "F-017",
+    "name": "Android driver",
+    "milestone": "M7",
+    "status": "DEFERRED",
+    "priority": "P2",
+    "depends": [
+      "F-001",
+      "F-002"
+    ],
+    "spec": "docs/features/F-017-android-driver.md",
+    "source": [
+      "src/game_explorer/drivers/android.py"
+    ],
+    "tests": [
+      "tests/test_android.py"
+    ],
+    "owner": "unassigned"
+  },
+  "F-018": {
+    "id": "F-018",
+    "name": "Gameplay adapters",
+    "milestone": "M8",
+    "status": "DEFERRED",
+    "priority": "P2",
+    "depends": [
+      "F-001",
+      "F-005"
+    ],
+    "spec": "docs/features/F-018-gameplay-adapters.md",
+    "source": [
+      "src/game_explorer/game_adapters/"
+    ],
+    "tests": [
+      "tests/test_game_adapters.py"
+    ],
+    "owner": "unassigned"
+  },
+  "F-019": {
+    "id": "F-019",
+    "name": "Internal QA automation",
+    "milestone": "M5",
+    "status": "PLANNED",
+    "priority": "P2",
+    "depends": [
+      "F-007",
+      "F-012",
+      "F-014"
+    ],
+    "spec": "docs/features/F-019-internal-qa-automation.md",
+    "source": [
+      "configs/targets/"
+    ],
+    "tests": [
+      "tests/test_internal_qa.py"
+    ],
+    "owner": "unassigned"
+  },
+  "F-020": {
+    "id": "F-020",
+    "name": "Continuous integration",
+    "milestone": "M9",
+    "status": "DEFERRED",
+    "priority": "P2",
+    "depends": [
+      "F-016",
+      "F-022"
+    ],
+    "spec": "docs/features/F-020-continuous-integration.md",
+    "source": [
+      ".github/workflows/"
+    ],
+    "tests": [
+      "tests/test_ci_contract.py"
+    ],
+    "owner": "unassigned"
+  },
+  "F-021": {
+    "id": "F-021",
+    "name": "Human-guided recording",
+    "milestone": "M3",
+    "status": "PLANNED",
+    "priority": "P2",
+    "depends": [
+      "F-002",
+      "F-009",
+      "F-012"
+    ],
+    "spec": "docs/features/F-021-human-guided-recording.md",
+    "source": [
+      "src/game_explorer/recording/session.py"
+    ],
+    "tests": [
+      "tests/test_recording.py"
+    ],
+    "owner": "unassigned"
+  },
+  "F-022": {
+    "id": "F-022",
+    "name": "Repository context tooling",
+    "milestone": "M0",
+    "priority": "P0",
+    "status": "TESTED",
+    "depends": [],
+    "spec": "docs/features/F-022-repository-context-tooling.md",
+    "source": [
+      "scripts/project_context.py",
+      ".project/registry.json"
+    ],
+    "tests": [
+      "tests/test_foundation.py"
+    ],
+    "owner": "integration",
+    "evidence": "docs/testing/VALIDATION_STATUS.md"
+  }
+}

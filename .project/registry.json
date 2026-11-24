@@ -1,0 +1,790 @@
+{
+  "features": [
+    {
+      "id": "F-001",
+      "name": "Browser automation driver",
+      "milestone": "M1",
+      "priority": "P0",
+      "status": "PLANNED",
+      "depends": [
+        "F-022"
+      ],
+      "spec": "docs/features/F-001-browser-automation-driver.md",
+      "source": [
+        "src/game_explorer/drivers/playwright.py"
+      ],
+      "tests": [
+        "tests/test_browser.py"
+      ],
+      "owner": "unassigned"
+    },
+    {
+      "id": "F-002",
+      "name": "Observation engine",
+      "milestone": "M1",
+      "priority": "P0",
+      "status": "PLANNED",
+      "depends": [
+        "F-001"
+      ],
+      "spec": "docs/features/F-002-observation-engine.md",
+      "source": [
+        "src/game_explorer/observation/snapshot.py"
+      ],
+      "tests": [
+        "tests/test_browser.py"
+      ],
+      "owner": "unassigned"
+    },
+    {
+      "id": "F-003",
+      "name": "State fingerprinting",
+      "milestone": "M1",
+      "priority": "P0",
+      "status": "PLANNED",
+      "depends": [
+        "F-002"
+      ],
+      "spec": "docs/features/F-003-state-fingerprinting.md",
+      "source": [
+        "src/game_explorer/state/recognize.py"
+      ],
+      "tests": [
+        "tests/test_domain.py"
+      ],
+      "owner": "unassigned"
+    },
+    {
+      "id": "F-004",
+      "name": "Action discovery",
+      "milestone": "M1",
+      "priority": "P0",
+      "status": "PLANNED",
+      "depends": [
+        "F-002"
+      ],
+      "spec": "docs/features/F-004-action-discovery.md",
+      "source": [
+        "src/game_explorer/actions/discover.py"
+      ],
+      "tests": [
+        "tests/test_domain.py"
+      ],
+      "owner": "unassigned"
+    },
+    {
+      "id": "F-005",
+      "name": "Safety policy engine",
+      "milestone": "M1",
+      "priority": "P0",
+      "status": "PLANNED",
+      "depends": [
+        "F-004"
+      ],
+      "spec": "docs/features/F-005-safety-policy-engine.md",
+      "source": [
+        "src/game_explorer/policies/scope.py"
+      ],
+      "tests": [
+        "tests/test_domain.py"
+      ],
+      "owner": "unassigned"
+    },
+    {
+      "id": "F-006",
+      "name": "Navigation graph",
+      "milestone": "M1",
+      "priority": "P0",
+      "status": "PLANNED",
+      "depends": [
+        "F-003",
+        "F-008"
+      ],
+      "spec": "docs/features/F-006-navigation-graph.md",
+      "source": [
+        "src/game_explorer/storage/store.py"
+      ],
+      "tests": [
+        "tests/test_store.py"
+      ],
+      "owner": "unassigned"
+    },
+    {
+      "id": "F-007",
+      "name": "Exploration planner",
+      "milestone": "M1",
+      "priority": "P0",
+      "status": "PLANNED",
+      "depends": [
+        "F-005",
+        "F-006",
+        "F-009"
+      ],
+      "spec": "docs/features/F-007-exploration-planner.md",
+      "source": [
+        "src/game_explorer/exploration/engine.py"
+      ],
+      "tests": [
+        "tests/test_browser.py"
+      ],
+      "owner": "unassigned"
+    },
+    {
+      "id": "F-008",
+      "name": "Persistent storage",
+      "milestone": "M1",
+      "priority": "P0",
+      "status": "PLANNED",
+      "depends": [
+        "F-003"
+      ],
+      "spec": "docs/features/F-008-persistent-storage.md",
+      "source": [
+        "src/game_explorer/storage/store.py"
+      ],
+      "tests": [
+        "tests/test_store.py"
+      ],
+      "owner": "unassigned"
+    },
+    {
+      "id": "F-009",
+      "name": "Evidence management",
+      "milestone": "M1",
+      "priority": "P0",
+      "status": "PLANNED",
+      "depends": [
+        "F-002"
+      ],
+      "spec": "docs/features/F-009-evidence-management.md",
+      "source": [
+        "src/game_explorer/evidence/files.py"
+      ],
+      "tests": [
+        "tests/test_store.py"
+      ],
+      "owner": "unassigned"
+    },
+    {
+      "id": "F-010",
+      "name": "OmniRouter integration",
+      "milestone": "M2",
+      "status": "PLANNED",
+      "priority": "P2",
+      "depends": [
+        "F-005",
+        "F-007"
+      ],
+      "spec": "docs/features/F-010-omnirouter-integration.md",
+      "source": [
+        "src/game_explorer/llm/"
+      ],
+      "tests": [
+        "tests/test_llm.py"
+      ],
+      "owner": "unassigned"
+    },
+    {
+      "id": "F-011",
+      "name": "Resumable exploration",
+      "milestone": "M3",
+      "status": "PLANNED",
+      "priority": "P2",
+      "depends": [
+        "F-007",
+        "F-008"
+      ],
+      "spec": "docs/features/F-011-resumable-exploration.md",
+      "source": [
+        "src/game_explorer/exploration/checkpoints.py"
+      ],
+      "tests": [
+        "tests/test_recovery.py"
+      ],
+      "owner": "unassigned"
+    },
+    {
+      "id": "F-012",
+      "name": "Human intervention",
+      "milestone": "M3",
+      "status": "PLANNED",
+      "priority": "P2",
+      "depends": [
+        "F-001",
+        "F-011"
+      ],
+      "spec": "docs/features/F-012-human-intervention.md",
+      "source": [
+        "src/game_explorer/recording/intervention.py"
+      ],
+      "tests": [
+        "tests/test_intervention.py"
+      ],
+      "owner": "unassigned"
+    },
+    {
+      "id": "F-013",
+      "name": "Business rule extraction",
+      "milestone": "M4",
+      "status": "PLANNED",
+      "priority": "P2",
+      "depends": [
+        "F-002",
+        "F-009",
+        "F-010"
+      ],
+      "spec": "docs/features/F-013-business-rule-extraction.md",
+      "source": [
+        "src/game_explorer/analysis/rules.py"
+      ],
+      "tests": [
+        "tests/test_analysis.py"
+      ],
+      "owner": "unassigned"
+    },
+    {
+      "id": "F-014",
+      "name": "Documentation generator",
+      "milestone": "M1",
+      "priority": "P0",
+      "status": "PLANNED",
+      "depends": [
+        "F-006",
+        "F-009"
+      ],
+      "spec": "docs/features/F-014-documentation-generator.md",
+      "source": [
+        "src/game_explorer/reporting/offline.py"
+      ],
+      "tests": [
+        "tests/test_browser.py"
+      ],
+      "owner": "unassigned"
+    },
+    {
+      "id": "F-015",
+      "name": "Competitor comparison",
+      "milestone": "M6",
+      "status": "PLANNED",
+      "priority": "P2",
+      "depends": [
+        "F-013",
+        "F-014"
+      ],
+      "spec": "docs/features/F-015-competitor-comparison.md",
+      "source": [
+        "src/game_explorer/comparison/"
+      ],
+      "tests": [
+        "tests/test_comparison.py"
+      ],
+      "owner": "unassigned"
+    },
+    {
+      "id": "F-016",
+      "name": "Regression detection",
+      "milestone": "M9",
+      "status": "DEFERRED",
+      "priority": "P2",
+      "depends": [
+        "F-006",
+        "F-011",
+        "F-014"
+      ],
+      "spec": "docs/features/F-016-regression-detection.md",
+      "source": [
+        "src/game_explorer/analysis/regression.py"
+      ],
+      "tests": [
+        "tests/test_regression.py"
+      ],
+      "owner": "unassigned"
+    },
+    {
+      "id": "F-017",
+      "name": "Android driver",
+      "milestone": "M7",
+      "status": "DEFERRED",
+      "priority": "P2",
+      "depends": [
+        "F-001",
+        "F-002"
+      ],
+      "spec": "docs/features/F-017-android-driver.md",
+      "source": [
+        "src/game_explorer/drivers/android.py"
+      ],
+      "tests": [
+        "tests/test_android.py"
+      ],
+      "owner": "unassigned"
+    },
+    {
+      "id": "F-018",
+      "name": "Gameplay adapters",
+      "milestone": "M8",
+      "status": "DEFERRED",
+      "priority": "P2",
+      "depends": [
+        "F-001",
+        "F-005"
+      ],
+      "spec": "docs/features/F-018-gameplay-adapters.md",
+      "source": [
+        "src/game_explorer/game_adapters/"
+      ],
+      "tests": [
+        "tests/test_game_adapters.py"
+      ],
+      "owner": "unassigned"
+    },
+    {
+      "id": "F-019",
+      "name": "Internal QA automation",
+      "milestone": "M5",
+      "status": "PLANNED",
+      "priority": "P2",
+      "depends": [
+        "F-007",
+        "F-012",
+        "F-014"
+      ],
+      "spec": "docs/features/F-019-internal-qa-automation.md",
+      "source": [
+        "configs/targets/"
+      ],
+      "tests": [
+        "tests/test_internal_qa.py"
+      ],
+      "owner": "unassigned"
+    },
+    {
+      "id": "F-020",
+      "name": "Continuous integration",
+      "milestone": "M9",
+      "status": "DEFERRED",
+      "priority": "P2",
+      "depends": [
+        "F-016",
+        "F-022"
+      ],
+      "spec": "docs/features/F-020-continuous-integration.md",
+      "source": [
+        ".github/workflows/"
+      ],
+      "tests": [
+        "tests/test_ci_contract.py"
+      ],
+      "owner": "unassigned"
+    },
+    {
+      "id": "F-021",
+      "name": "Human-guided recording",
+      "milestone": "M3",
+      "status": "PLANNED",
+      "priority": "P2",
+      "depends": [
+        "F-002",
+        "F-009",
+        "F-012"
+      ],
+      "spec": "docs/features/F-021-human-guided-recording.md",
+      "source": [
+        "src/game_explorer/recording/session.py"
+      ],
+      "tests": [
+        "tests/test_recording.py"
+      ],
+      "owner": "unassigned"
+    },
+    {
+      "id": "F-022",
+      "name": "Repository context tooling",
+      "milestone": "M0",
+      "priority": "P0",
+      "status": "TESTED",
+      "depends": [],
+      "spec": "docs/features/F-022-repository-context-tooling.md",
+      "source": [
+        "scripts/project_context.py",
+        ".project/registry.json"
+      ],
+      "tests": [
+        "tests/test_foundation.py"
+      ],
+      "owner": "integration",
+      "evidence": "docs/testing/VALIDATION_STATUS.md"
+    }
+  ],
+  "tasks": [
+    {
+      "id": "T-001",
+      "name": "Foundation and reference fixture",
+      "milestone": "M0",
+      "features": [
+        "F-022"
+      ],
+      "depends": [],
+      "status": "TESTED",
+      "spec": "docs/tasks/active/T-001.md",
+      "paths": [
+        ".project",
+        "docs",
+        "configs",
+        "fixtures",
+        "scripts",
+        "src/game_explorer/cli",
+        "src/game_explorer/core",
+        "src/game_explorer/fixture",
+        "tests/test_foundation.py",
+        "pyproject.toml",
+        "Makefile"
+      ],
+      "tests": [
+        "tests/test_foundation.py"
+      ],
+      "acceptance": "Editable install, valid project links/index, CLI/fixture smoke, no credentials.",
+      "blockers": [],
+      "evidence": "docs/testing/VALIDATION_STATUS.md"
+    },
+    {
+      "id": "T-002",
+      "name": "Browser, observation and policy",
+      "milestone": "M1",
+      "features": [
+        "F-001",
+        "F-002",
+        "F-004",
+        "F-005"
+      ],
+      "depends": [
+        "T-001"
+      ],
+      "status": "PLANNED",
+      "spec": "docs/tasks/active/T-002.md",
+      "paths": [
+        "src/game_explorer/drivers",
+        "src/game_explorer/observation",
+        "src/game_explorer/actions",
+        "src/game_explorer/policies",
+        "tests/test_domain.py",
+        "tests/test_browser.py"
+      ],
+      "tests": [
+        "tests/test_domain.py"
+      ],
+      "acceptance": "Sanitized Chromium observations, no prohibited transport and revalidated actions.",
+      "blockers": []
+    },
+    {
+      "id": "T-003",
+      "name": "State, graph, store and bounded traversal",
+      "milestone": "M1",
+      "features": [
+        "F-003",
+        "F-006",
+        "F-007",
+        "F-008"
+      ],
+      "depends": [
+        "T-002"
+      ],
+      "status": "PLANNED",
+      "spec": "docs/tasks/active/T-003.md",
+      "paths": [
+        "src/game_explorer/state",
+        "src/game_explorer/storage",
+        "src/game_explorer/exploration",
+        "tests/test_store.py"
+      ],
+      "tests": [
+        "tests/test_store.py"
+      ],
+      "acceptance": "Distinct same-route fixture states, transaction records, bounded loops and short journeys.",
+      "blockers": []
+    },
+    {
+      "id": "T-004",
+      "name": "Screenshot evidence and offline report",
+      "milestone": "M1",
+      "features": [
+        "F-009",
+        "F-014"
+      ],
+      "depends": [
+        "T-003"
+      ],
+      "status": "PLANNED",
+      "spec": "docs/tasks/active/T-004.md",
+      "paths": [
+        "src/game_explorer/evidence",
+        "src/game_explorer/reporting",
+        "src/game_explorer/cli",
+        "tests/test_browser.py"
+      ],
+      "tests": [
+        "tests/test_browser.py"
+      ],
+      "acceptance": "Real Chromium run matches reference graph and offline screenshot report remains portable.",
+      "blockers": []
+    },
+    {
+      "id": "T-005",
+      "name": "Specify bounded AI planner and provider",
+      "milestone": "M2",
+      "features": [
+        "F-010"
+      ],
+      "depends": [
+        "T-004"
+      ],
+      "status": "PLANNED",
+      "spec": "docs/tasks/active/T-005.md",
+      "paths": [],
+      "tests": [],
+      "acceptance": "Define typed proposals, transport capabilities, limits/fallback and mock-driven acceptance tests.",
+      "blockers": []
+    },
+    {
+      "id": "T-006",
+      "name": "Implement provider and advisory planner",
+      "milestone": "M2",
+      "features": [
+        "F-010"
+      ],
+      "depends": [
+        "T-005"
+      ],
+      "status": "PLANNED",
+      "spec": "docs/tasks/active/T-006.md",
+      "paths": [
+        "src/game_explorer/llm",
+        "src/game_explorer/exploration",
+        "tests/test_llm.py"
+      ],
+      "tests": [
+        "tests/test_llm.py"
+      ],
+      "acceptance": "Mock provider respects model capabilities, rankings, quotas, error fallback and cancellation.",
+      "blockers": []
+    },
+    {
+      "id": "T-007",
+      "name": "Implement and verify durable run resumption",
+      "milestone": "M3",
+      "features": [
+        "F-011"
+      ],
+      "depends": [
+        "T-004"
+      ],
+      "status": "PLANNED",
+      "spec": "docs/tasks/active/T-007.md",
+      "paths": [
+        "src/game_explorer/exploration",
+        "src/game_explorer/storage",
+        "tests/test_recovery.py"
+      ],
+      "tests": [
+        "tests/test_recovery.py"
+      ],
+      "acceptance": "Interrupt and resume a scoped fixture with no duplicate completed actions or changed evidence.",
+      "blockers": []
+    },
+    {
+      "id": "T-008",
+      "name": "Implement privacy-aware human intervention and recording",
+      "milestone": "M3",
+      "features": [
+        "F-012",
+        "F-021"
+      ],
+      "depends": [
+        "T-007"
+      ],
+      "status": "PLANNED",
+      "spec": "docs/tasks/active/T-008.md",
+      "paths": [
+        "src/game_explorer/recording",
+        "tests/test_intervention.py",
+        "tests/test_recording.py"
+      ],
+      "tests": [
+        "tests/test_intervention.py",
+        "tests/test_recording.py"
+      ],
+      "acceptance": "Record a permitted manual journey, including notes/marks, and suppress sensitive steps.",
+      "blockers": []
+    },
+    {
+      "id": "T-009",
+      "name": "Derive journeys and rules and publish offline documentation",
+      "milestone": "M4",
+      "features": [
+        "F-013",
+        "F-014"
+      ],
+      "depends": [
+        "T-004",
+        "T-006"
+      ],
+      "status": "PLANNED",
+      "spec": "docs/tasks/active/T-009.md",
+      "paths": [
+        "src/game_explorer/analysis",
+        "src/game_explorer/reporting",
+        "tests/test_analysis.py",
+        "tests/test_browser.py"
+      ],
+      "tests": [
+        "tests/test_analysis.py",
+        "tests/test_browser.py"
+      ],
+      "acceptance": "The complete M4 report resolves every material claim to observed or qualified evidence offline.",
+      "blockers": []
+    },
+    {
+      "id": "T-010",
+      "name": "Validate an authorized X-Game test profile",
+      "milestone": "M5",
+      "features": [
+        "F-019"
+      ],
+      "depends": [
+        "T-008",
+        "T-009"
+      ],
+      "status": "PLANNED",
+      "spec": "docs/tasks/active/T-010.md",
+      "paths": [
+        "configs/targets",
+        "tests/test_internal_qa.py"
+      ],
+      "tests": [
+        "tests/test_internal_qa.py"
+      ],
+      "acceptance": "Obtain explicit test permission and document catalog, authentication, profile/history, matchmaking and results.",
+      "blockers": []
+    },
+    {
+      "id": "T-011",
+      "name": "Build offline comparisons and validate an authorized benchmark",
+      "milestone": "M6",
+      "features": [
+        "F-015"
+      ],
+      "depends": [
+        "T-009",
+        "T-010"
+      ],
+      "status": "PLANNED",
+      "spec": "docs/tasks/active/T-011.md",
+      "paths": [
+        "src/game_explorer/comparison",
+        "tests/test_comparison.py"
+      ],
+      "tests": [
+        "tests/test_comparison.py"
+      ],
+      "acceptance": "Compare two fixture runs before a permitted benchmark; export portable matrices and recommendations.",
+      "blockers": []
+    },
+    {
+      "id": "T-012",
+      "name": "Implement authorized Android fixture driver",
+      "milestone": "M7",
+      "features": [
+        "F-017"
+      ],
+      "depends": [
+        "T-004"
+      ],
+      "status": "DEFERRED",
+      "spec": "docs/tasks/active/T-012.md",
+      "paths": [
+        "src/game_explorer/drivers/android.py",
+        "tests/test_android.py"
+      ],
+      "tests": [
+        "tests/test_android.py"
+      ],
+      "acceptance": "Equivalent Android fixture observations, graph and reports; package or device drift fails closed.",
+      "blockers": []
+    },
+    {
+      "id": "T-013",
+      "name": "Implement isolated gameplay adapters",
+      "milestone": "M8",
+      "features": [
+        "F-018"
+      ],
+      "depends": [
+        "T-004"
+      ],
+      "status": "DEFERRED",
+      "spec": "docs/tasks/active/T-013.md",
+      "paths": [
+        "src/game_explorer/game_adapters",
+        "tests/test_game_adapters.py"
+      ],
+      "tests": [
+        "tests/test_game_adapters.py"
+      ],
+      "acceptance": "Bounded, reproducible Pong, Morris and Sky Flap practice with result evidence.",
+      "blockers": []
+    },
+    {
+      "id": "T-014",
+      "name": "Implement evidence-aware regression diff and reviewed replay",
+      "milestone": "M9",
+      "features": [
+        "F-016"
+      ],
+      "depends": [
+        "T-007",
+        "T-009"
+      ],
+      "status": "DEFERRED",
+      "spec": "docs/tasks/active/T-014.md",
+      "paths": [
+        "src/game_explorer/analysis/regression.py",
+        "tests/test_regression.py"
+      ],
+      "tests": [
+        "tests/test_regression.py"
+      ],
+      "acceptance": "Diff two fixture revisions and replay only approved scoped journeys; no false removal claims.",
+      "blockers": []
+    },
+    {
+      "id": "T-015",
+      "name": "Add approved QA and documentation CI",
+      "milestone": "M9",
+      "features": [
+        "F-020"
+      ],
+      "depends": [
+        "T-014"
+      ],
+      "status": "DEFERRED",
+      "spec": "docs/tasks/active/T-015.md",
+      "paths": [
+        ".github/workflows",
+        "tests/test_ci_contract.py"
+      ],
+      "tests": [
+        "tests/test_ci_contract.py"
+      ],
+      "acceptance": "Run verified checks and optional internal baseline jobs; no external schedules by default.",
+      "blockers": []
+    }
+  ],
+  "components": {
+    "core": "src/game_explorer/core",
+    "fixture": "src/game_explorer/fixture",
+    "browser": "src/game_explorer/drivers",
+    "storage": "src/game_explorer/storage",
+    "exploration": "src/game_explorer/exploration",
+    "reporting": "src/game_explorer/reporting"
+  }
+}

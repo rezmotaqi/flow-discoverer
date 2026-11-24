@@ -1,0 +1,8 @@
+{
+  "core": "src/game_explorer/core",
+  "fixture": "src/game_explorer/fixture",
+  "browser": "src/game_explorer/drivers",
+  "storage": "src/game_explorer/storage",
+  "exploration": "src/game_explorer/exploration",
+  "reporting": "src/game_explorer/reporting"
+}

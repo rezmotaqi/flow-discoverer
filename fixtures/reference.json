@@ -1,0 +1,14 @@
+{
+  "states": [
+    ["/", "Arena Lab", ""], ["/games", "Game catalog", ""],
+    ["/games", "Game catalog", "Catalog help"], ["/instructions", "Pong instructions", ""],
+    ["/play", "Mock gameplay", ""], ["/play", "Mock gameplay", ""],
+    ["/results", "Mock results", ""], ["/history", "Score history", ""],
+    ["/leaderboard/weekly", "Weekly standings", ""], ["/leaderboard/monthly", "Monthly standings", ""],
+    ["/tournament", "Weekly tournament", ""], ["/shop", "Reward shop", ""],
+    ["/fa", "بازی‌های تمرینی", ""], ["/broken", "Page not found", ""]
+  ],
+  "journey": ["/", "/games", "/instructions", "/play", "/play", "/results", "/history"],
+  "blocked_routes": ["/payment", "/account", "/login", "/register", "/logout"],
+  "required_buttons": ["catalog-help", "dismiss-help", "mock-round", "reset-round"]
+}

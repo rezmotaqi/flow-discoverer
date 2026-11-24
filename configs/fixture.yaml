@@ -1,0 +1,9 @@
+id: fixture
+display_name: Arena Lab (synthetic fixture)
+start_url: http://127.0.0.1:8765/
+allowed_domains: [127.0.0.1]
+allowed_routes: [/, /games, /instructions, /play, /results, /history, /leaderboard/weekly, /leaderboard/monthly, /tournament, /shop, /fa, /broken]
+prohibited_routes: [/payment, /account, /login, /register, /logout]
+allowed_buttons:
+  /games: [catalog-help, dismiss-help]
+  /play: [mock-round, reset-round]
